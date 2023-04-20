@@ -12,10 +12,12 @@ app.use(express.static(__dirname + '/View'));
 io.on('connection', (socket) => {
     console.log('A User Connected');
 
+    // emit event testing to send data to client
     socket.emit('back', {
         message: 'salaaaaaaaaam'
     })
 
+    // emit event testing to get data from client
     socket.on('front', (data) => {
         console.log(data.message);
     })
