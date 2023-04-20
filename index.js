@@ -9,7 +9,13 @@ app.get('/', (req, res) => {
 
 app.use(express.static(__dirname + '/View'));
 
+io.on('connection', (socket) => {
+    console.log('A User Connected');
 
+    socket.on('disconnected', () => {
+        console.log('A User desconnected');
+    })
+})
 
 http.listen(4000, () => {
     console.log('Listening on port 4000 ...');
