@@ -9,3 +9,8 @@ socket.on('back', (data) => {
 socket.emit('front', {
     message: 'salaaaaam'
 })
+
+// broadcasting
+socket.on('broadcast', (data)=>{
+    console.log(data.message);
+})
