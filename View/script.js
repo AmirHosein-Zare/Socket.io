@@ -14,3 +14,8 @@ socket.emit('front', {
 socket.on('braodcast', (data)=>{
     console.log(data.message);
 })
+
+// braodcasting
+socket.on('newMessage', (data) => {
+    console.log(data.message);
+})
