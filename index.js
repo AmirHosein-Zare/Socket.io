@@ -12,7 +12,7 @@ app.use(express.static(__dirname + '/View'));
 io.on('connection', (socket) => {
     console.log('A User Connected');
 
-    socket.on('disconnected', () => {
+    socket.on('disconnect', () => {
         console.log('A User desconnected');
     })
 })
