@@ -16,6 +16,10 @@ io.on('connection', (socket) => {
         message: 'salaaaaaaaaam'
     })
 
+    socket.on('front', (data) => {
+        console.log(data.message);
+    })
+
     socket.on('disconnect', () => {
         console.log('A User desconnected');
     })
