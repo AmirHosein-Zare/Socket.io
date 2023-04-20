@@ -26,7 +26,7 @@ io.on('connection', (socket) => {
         console.log(data.message);
     })
 
-    // broadcasting
+    // broadcasting - send connected user to client
     io.sockets.emit('braodcast', {
         message: client
     })

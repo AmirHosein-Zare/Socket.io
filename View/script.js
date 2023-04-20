@@ -10,7 +10,7 @@ socket.emit('front', {
     message: 'salaaaaam'
 })
 
-// broadcasting
+// broadcasting a user that connected
 socket.on('braodcast', (data)=>{
     console.log(data.message);
 })
