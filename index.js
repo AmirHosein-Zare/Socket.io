@@ -9,8 +9,12 @@ app.get('/', (req, res) => {
 
 app.use(express.static(__dirname + '/View'));
 
+let client = 0;
+
 io.on('connection', (socket) => {
     console.log('A User Connected');
+
+    client++;
 
     // emit event testing to send data to client
     socket.emit('back', {
@@ -22,8 +26,14 @@ io.on('connection', (socket) => {
         console.log(data.message);
     })
 
+    // broadcasting
+    io.socket.emit('braodcast', {
+        message: client + ', connected' 
+    })
+
     socket.on('disconnect', () => {
         console.log('A User desconnected');
+        client--;
     })
 })
 
