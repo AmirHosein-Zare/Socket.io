@@ -31,6 +31,11 @@ io.on('connection', (socket) => {
         message: client
     })
 
+    // braodcasting
+    socket.braodcast.emit('newMessage', {
+        message: client
+    })
+
     socket.on('disconnect', () => {
         console.log('A User desconnected');
         client--;
