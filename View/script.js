@@ -11,6 +11,6 @@ socket.emit('front', {
 })
 
 // broadcasting
-socket.on('broadcast', (data)=>{
+socket.on('braodcast', (data)=>{
     console.log(data.message);
 })

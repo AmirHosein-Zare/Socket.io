@@ -27,8 +27,8 @@ io.on('connection', (socket) => {
     })
 
     // broadcasting
-    io.socket.emit('braodcast', {
-        message: client + ', connected' 
+    io.sockets.emit('braodcast', {
+        message: client
     })
 
     socket.on('disconnect', () => {
