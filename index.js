@@ -36,6 +36,13 @@ io.on('connection', (socket) => {
         message: client
     })
 
+    // room
+    socket.join('chat');
+
+    socket.to("chat").emit('send', {
+        message: 'message room'
+    }
+
     socket.on('disconnect', () => {
         console.log('A User desconnected');
         client--;
