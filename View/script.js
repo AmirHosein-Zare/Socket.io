@@ -19,3 +19,8 @@ socket.on('braodcast', (data)=>{
 socket.on('newMessage', (data) => {
     console.log(data.message);
 })
+
+//room
+socket.on('send', (data) => {
+    console.log(data.message);
+})
